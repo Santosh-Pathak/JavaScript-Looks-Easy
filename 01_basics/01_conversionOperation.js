@@ -19,11 +19,33 @@
 // "" =?false
 // "anything" => true
 
-let  someNumber = 33;
-let stringNumber  = String(someNumber);
-console.log(someNumber);
-console.log(stringNumber);
-console.log( typeof stringNumber);
+// let  someNumber = 33;
+// let stringNumber  = String(someNumber);
+// console.log(someNumber);
+// console.log(stringNumber);
+// console.log( typeof stringNumber);
 
+
+/**********Operations************** */
+// let val = 3;
+// let negVal = -val;
+// console.log(val);
+// console.log(negVal);
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2**4);
+// console.log(2/2);
+// console.log(3%2);
+
+// console.log("1"+2);
+// console.log("1"+2+2);
+// console.log(2+2+"1");
+
+// console.log(+true);
+// console.log(+"");
+let val ,num ,num2;
+num=num2=val =2+2;
+console.table([val,num,num2]);
 
 
