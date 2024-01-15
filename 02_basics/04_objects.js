@@ -29,8 +29,37 @@ const obj3 = {...obj1,...obj2}; //mostly used
 
 
 
-console.log(tinderUser);
-console.log(Object.keys(tinderUser)); // show all the keys
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser)); // show all the keys
 const arrayOfKeys =  Object.keys(tinderUser); // an array of keys of Object TInderUser
 const arrayOfValues = Object.values(tinderUser);
+
+
+//Object de-Structure and JSON API
+const course = { 
+    courseName : "javaScript Made Easy",
+    price :"999",
+    courseInstructor  : "Hitesh Sir"
+}
+// console.log(course.courseInstructor); // naive way
+const {courseInstructor} = course;  
+console.log(courseInstructor);
+// to use the data after Renaming 
+const {courseInstructor  : instructure} = course;
+console.log(instructure);
+
+// de-structuring of React Components
+const navbar = ({company}) =>{ //instead of using props.company we had used company as de-structured 
+
+}
+navbar(company = " Hitesh");
+
+// 
+
+
+
+
+
+
+
 
