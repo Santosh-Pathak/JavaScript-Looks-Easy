@@ -26,3 +26,17 @@ function one()
 }
 one();
 //Closure =>in closure child Functions can use the variable of Parent Functions
+
+// **************INTERESTING***********************
+function addone(num)
+{
+    return num+1;
+}
+console.log(addone(5));
+
+// console.log(addTwo(5)); => ERROR
+const addTwo = function(num)
+{
+    return num+2;
+}
+console.log(addTwo(5));
