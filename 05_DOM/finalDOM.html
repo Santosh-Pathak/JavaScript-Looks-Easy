@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body style="background-color: black; color: tomato;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.langauge');
+        appendChild(li);
+    }
+    function addLanguageOptimally(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguageOptimally("Cpp");
+    addLanguageOptimally("Golang");
+
+    // Edit Values
+    const secondLang = document.querySelector("li:nth-Child(2)");
+    secondLang.innerHTML = "Swift"
+    const newLi  = document.createElement('li');
+    newLi.textContent= "Mojo"
+    secondLang.replaceWith(newLi);
+    
+    
+</script>
+</html>     
