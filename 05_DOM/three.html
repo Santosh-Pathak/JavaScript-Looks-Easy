@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: bisque;"> 
+    <h1>How to Create a New Element in DOM</h1>
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = "main"
+    div.id = "divContainer1"
+    div.style.backgroundColor="Red"
+    div.style.padding="12px"
+    const addText = document.createTextNode("Chai or Code")
+    div.append(addText)
+    document.body.appendChild('div');
+</script>
+</html>
