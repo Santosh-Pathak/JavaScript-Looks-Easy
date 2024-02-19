@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // Applying Events on DOm element
+    // 1->Direectlu using  Events on HTNL components
+    // Step 2
+    //   document.getElementById('owl').onclick = function(){
+    //     alert("Owl Clicked");
+    // }
+
+    // Way 3 ->
+    // document.getElementById('owl').addEventListener('click' , function(){
+    //     alert("Owl Clicked");
+    // },)
+
+    // way 4-> attacthEvent()
+    //jQuery -> on
+
+    // document.getElementById("images").addEventListener("click", function (e) {
+    //   // alert(" Clicked");
+    //   console.log("Clicked Inside the UL");
+    //   // console.log(e.timeStamp);
+    // },false);
+
+    //things to Learn
+    // Type  ,timestamp , defalutPrevented
+    // target , toElement  ,sourceElement ,srcElement
+    // clientX , clientY , screenx , screenY
+    //altkey , ctrlKey  ,shiftKey , keyCode
+
+    //Event Propagation- > 1-Event Bubbling(false) 2-> Event Capturing(true)
+    // (third Parameter)
+    // document.getElementById("images").addEventListener("click", function (e) {
+    //   console.log("Clicked Inside the UL");
+    // },false);
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //   console.log("Owl Clicked ");
+    // },false);
+
+    // Output is : Owl Clicked
+    // Clicked Inside the UL
+    // (Bottomto Top )Bubbling
+    /*   document.getElementById("images").addEventListener(
+      "click",
+      function (e) {
+        console.log("Clicked Inside the UL");
+      },
+      true
+    );
+
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (e) {
+        console.log("Owl Clicked ");
+      },
+      true
+    );
+*/
+    // Output is : Clicked Inside the UL
+    //     Owl Clicked
+    //(top to Bottom)Capturing
+
+    /*   document.getElementById("images").addEventListener(
+      "click",
+      function (e) {
+        console.log("Clicked Inside the UL");
+        e.stopPropagation(); // to prevent the Bubbling of EVENTS
+      },
+      true
+    );
+
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (e) {
+        console.log("Owl Clicked ");
+      },
+      true
+    );
+*/
+
+    // now we are doing something by which if we click over any image it get disapper
+    document.querySelector("#images").addEventListener(
+      "click",
+      function (e) {
+        // console.log(e.target.parentNode);
+        // console.log(e.target.tagName);
+
+        if (e.target.tagName === "IMG") {
+          let elementToRemove = e.target.parentNode;
+          // elementToRemove.parentNode.removeChild(elementToRemove); // Method 2
+          elementToRemove.remove(); //Method 1
+        }
+      },
+      false
+    );
+  </script>
+</html>
