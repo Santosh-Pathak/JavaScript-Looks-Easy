@@ -1,0 +1,9 @@
+JavaScript is a Default Synchronous and Single Threaded
+Execution Context -> execute one line of Code at a  time(Single Threaded)
+
+Blocking Code -> Block the flow of the Prohram ->read FIle Synchronous
+
+Non-Blocking Code -> Doesn't block the Execution Flow ->Read File Async
+
+
+
