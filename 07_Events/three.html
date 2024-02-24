@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>HomeWork For Events in JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    
+      const sayDate = function () {
+        console.log("Changing Color");
+      };
+
+      let intervalID;
+    document.querySelector("#start").addEventListener('click', function () {
+       intervalID = setInterval(sayDate, 1000);
+    });
+
+    document.querySelector("#stop").addEventListener('click', function () {
+      clearInterval(intervalID);
+    });
+  </script>
+</html>
